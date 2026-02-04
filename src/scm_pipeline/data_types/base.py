@@ -504,3 +504,81 @@ class ParquetFile(DataFile):
 
     def close(self):
         pass
+
+
+class ASDFFile(DataFile):
+    supports_parallel_write = False
+    """
+    A data file in the ASDF format.
+    Using these files requires the asdf package.
+
+    """
+    suffix = "asdf"
+    required_branches = []
+
+    @classmethod
+    def open(cls, path, mode, **kwargs):
+        import asdf
+        match mode:
+            case "r":
+                # ASDF does support "rw", but we force read-only for now
+                tree = asdf.open(path, mode="r", **kwargs)
+            case "w":
+                tree = asdf.AsdfFile(None, **kwargs)
+
+        return tree
+
+    def write(self, **kwargs):
+        if self.mode == "r":
+            raise UnsupportedOperation(
+                f"Cannot write to an ASDF file opened in read-only mode ({self.mode}"
+            )
+        self.file.write_to(self.path, **kwargs)
+
+    def write_provenance(self):
+        """
+        Write provenance information to a new group,
+        called 'provenance'
+        """
+        if self.mode == "r":
+            raise UnsupportedOperation(
+                f"Cannot write provenance to an ASDF file opened in read-only mode ({self.mode}"
+            )
+
+        # This method *must* be called by all the processes in a parallel
+        # run.
+        if "provenance" not in self.file:
+            self.file["provenance"] = {}
+        self._provenance_tree = self.file["provenance"]
+
+        # Call the sub-method to do each item
+        for key, value in self.provenance.items():
+            self._provenance_tree[key] = value
+
+    def read_provenance(self):
+        try:
+            provenance = self.file["provenance"]
+            tree = provenance
+        except KeyError:
+            provenance = {}
+            tree = None
+
+        provenance = {
+            "uuid": provenance.get("uuid", "UNKNOWN"),
+            "creation": provenance.get("creation", "UNKNOWN"),
+            "domain": provenance.get("domain", "UNKNOWN"),
+            "username": provenance.get("username", "UNKNOWN"),
+        }
+
+        self._provenance_tree = tree
+
+        return provenance
+
+    def validate(self):
+        missing = [name for name in self.required_branches if name not in self.file]
+        if missing:
+            text = "\n".join(missing)
+            raise FileValidationError(f"These data sets are missing from ASDF file {self.path}:\n{text}")
+
+    def close(self):
+        self.file.close()
