@@ -1,0 +1,19 @@
+[project]
+name = "scm_pipeline"
+version = "0.1"
+description = "Ceci pipeline for Roman HLIS Cosmology SCM"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Roman-HLIS-Cosmology-PIT" },
+  { name = "Sidney Mau", email = "sidney.mau@duke.edu" },
+]
+requires-python = ">=3.10"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/Roman-HLIS-Cosmology-PIT/scm-pipeline"
+Repository = "https://github.com/Roman-HLIS-Cosmology-PIT/scm-pipeline.git"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
