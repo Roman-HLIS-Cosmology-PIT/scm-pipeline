@@ -1,3 +1,2 @@
-asdf
 ceci
-pyarrow
+numpy
