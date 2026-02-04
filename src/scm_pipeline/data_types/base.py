@@ -172,7 +172,9 @@ class HDFFile(DataFile):
         called 'provenance'
         """
         if self.mode == "r":
-            raise UnsupportedOperation(f"Cannot write provenance to an HDF5 file opened in read-only mode ({self.mode}")
+            raise UnsupportedOperation(
+                f"Cannot write provenance to an HDF5 file opened in read-only mode ({self.mode}"
+            )
 
         # This method *must* be called by all the processes in a parallel
         # run.
@@ -247,7 +249,9 @@ class FitsFile(DataFile):
         """
         # Call the sub-method to do each item
         if self.mode == "r":
-            raise UnsupportedOperation(f"Cannot write provenance to a FITS file opened in read-only mode ({self.mode}")
+            raise UnsupportedOperation(
+                f"Cannot write provenance to a FITS file opened in read-only mode ({self.mode}"
+            )
 
         for key, value in self.provenance.items():
             if isinstance(value, str) and "\n" in value:
@@ -311,7 +315,9 @@ class YamlFile(DataFile):
             elif load_mode == "unsafe":
                 self.content = yaml.unsafe_load(self.file)
             else:
-                raise ValueError(f"Unknown value {yaml_load} of load_mode. Should be 'safe', 'full', or 'unsafe'")
+                raise ValueError(
+                    f"Unknown value {load_mode} of load_mode. Should be 'safe', 'full', or 'unsafe'"
+                )
             # get provenance
             self.provenance = self.read_provenance()
 
@@ -370,7 +376,9 @@ class Directory(DataFile):
         # This method *must* be called by all the processes in a parallel
         # run.
         if self.mode == "r":
-            raise UnsupportedOperation(f"Cannot write provenance to a directory opened in read-only mode ({self.mode})")
+            raise UnsupportedOperation(
+                f"Cannot write provenance to a directory opened in read-only mode ({self.mode})"
+            )
 
         self._provenance_file = open(self.file / "provenance.yml", "w")
 
