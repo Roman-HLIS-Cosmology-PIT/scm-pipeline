@@ -5,7 +5,8 @@
 modules: 
   - psf_pipeline
   - imcom_pipeline
-  - mdet_pipeline
+  - shear_pipeline
+  - roman_sompz
 
 # The launcher to use
 # These are defined in ceci/sites
