@@ -582,3 +582,11 @@ class ASDFFile(DataFile):
 
     def close(self):
         self.file.close()
+
+
+class JSONFile(DataFile):
+    """
+    A data file in JSON format.
+    """
+
+    suffix = "json"
