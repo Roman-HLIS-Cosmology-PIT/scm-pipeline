@@ -150,5 +150,5 @@ _html/
 .initialize_new_project.sh
 
 # Ignore example output files
-example/outputs/
-example/logs/
+examples/*/outputs/
+examples/*/logs/

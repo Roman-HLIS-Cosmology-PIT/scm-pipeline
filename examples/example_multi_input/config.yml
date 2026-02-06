@@ -1,0 +1,5 @@
+DummyStageWait:
+  multiplier: 4
+
+DummyStageWait2:
+  multiplier: 2
