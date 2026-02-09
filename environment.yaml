@@ -4,3 +4,7 @@ channels:
 dependencies:
   - python >=3.13
   - lsstdesc-ceci
+  - pip:
+      - git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
+      - git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
+      - git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
