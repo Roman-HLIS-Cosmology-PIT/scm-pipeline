@@ -19,7 +19,13 @@ jobs:
           init-shell: bash
 
       - name: Install package with pip
-        run: pip install .
+        run: |
+          # Circular dependencies make this a little challenging... need to
+          # sort out the best way to do this
+          pip install .
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
         shell: micromamba-shell {0}
 
       - name: Make Ceci flow chart
