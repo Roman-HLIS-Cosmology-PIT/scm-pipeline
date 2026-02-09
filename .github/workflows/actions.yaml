@@ -1,0 +1,54 @@
+name: Build Ceci flow chart
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v5
+
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yaml
+          init-shell: bash
+
+      - name: Install package with pip
+        run: pip install .
+        shell: micromamba-shell {0}
+
+      - name: Make Ceci flow chart
+        run: ceci --flow-chart flow_chart.png main.yaml
+        shell: micromamba-shell {0}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flow_chart
+          path: ./flow_chart.png
+          if-no-files-found: error
+
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: flow_chart
+  #         path: ./static/
+
+  #     - name: Upload to pages
+  #       uses: actions/upload-pages-artifact@v4
+  #       with:
+  #         path: ./static/
+
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4

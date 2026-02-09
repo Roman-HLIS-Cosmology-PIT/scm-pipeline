@@ -4,4 +4,4 @@ asdf
 psf_pipeline @ git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
 imcom_pipeline @ git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
 shear_pipeline @ git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
-roman_sompz @ git+https://github.com/Roman-HLIS-Cosmology-PIT/Roman-SOMPZ.git
+# roman_sompz @ git+https://github.com/Roman-HLIS-Cosmology-PIT/Roman-SOMPZ.git

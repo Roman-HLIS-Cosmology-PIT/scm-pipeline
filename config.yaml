@@ -1,0 +1,16 @@
+global:
+  bands: [J129, H158]
+  block: [0, 1]
+
+DetectionStage:
+  detection_threshold: 1.2
+
+SelectionStage:
+  magnitude_cut: 19
+
+ColorAssignmentStage:
+  magnitude_cut: 19
+
+FittingStage:
+  magnitude_cut: 19
+
