@@ -55,7 +55,7 @@ stages:
 inputs:
     Exposure: /tmp/inputs/exposure.asdf
     sed_library: /tmp/
-    manifest_file1: /tmp/index1.txt
+    manifest_file: /tmp/index.txt
 
 
 # Overall configuration file

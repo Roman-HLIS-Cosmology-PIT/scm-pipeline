@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python >=3.13
   - lsstdesc-ceci
+  - pygraphviz
   # - pip:
   #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline
   #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom
