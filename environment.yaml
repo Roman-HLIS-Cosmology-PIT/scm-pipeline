@@ -7,5 +7,7 @@ dependencies:
   - pip:
       - git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
       - git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
+      - git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom.git
+      - git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver.git
       - git+https://github.com/Roman-HLIS-Cosmology-PIT/scm-pipeline.git
       - git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
