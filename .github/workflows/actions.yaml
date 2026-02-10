@@ -27,9 +27,9 @@ jobs:
           pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
           pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom.git
           pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver.git
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver.git
+          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver.git
           pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
+          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
         shell: micromamba-shell {0}
 
       - name: Make Ceci flow chart
