@@ -5,10 +5,9 @@ dependencies:
   - python >=3.13
   - lsstdesc-ceci
   # - pip:
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/scm-pipeline.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
-  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline
+  #     - git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline

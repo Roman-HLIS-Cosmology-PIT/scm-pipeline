@@ -2,7 +2,7 @@
 # stage classes.  Any stages imported in these
 # modules are automatically detected and their names can
 # be used below
-modules: psf_pipeline imcom_pipeline roman_sompz
+modules: psf_pipeline imcom_pipeline
 
 # The launcher to use
 # These are defined in ceci/sites
@@ -58,7 +58,7 @@ inputs:
     manifest_file1: /tmp/index1.txt
 
 
-# Overall configuration file 
+# Overall configuration file
 config: ./config.yaml
 
 # If all the outputs for a stage already exist then do not re-run that stage

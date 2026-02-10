@@ -24,12 +24,12 @@ jobs:
           # Circular dependencies make this a little challenging... need to
           # sort out the best way to do this
           pip install .
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline.git
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom.git
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver.git
-          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver.git
-          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline.git
-          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline.git
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/psf-pipeline
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/pyimcom
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/roman-hlis-l2-driver
+          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/metadetect-driver
+          pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/imcom-pipeline
+          # pip install git+https://github.com/Roman-HLIS-Cosmology-PIT/shear-pipeline
         shell: micromamba-shell {0}
 
       - name: Make Ceci flow chart
